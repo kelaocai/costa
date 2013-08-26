@@ -1,0 +1,77 @@
+<!-- JiaThis Button BEGIN -->
+
+<script type="text/javascript" >
+    $('#promotion_tab a:last').tab('show');
+
+    var jiathis_config = {
+        data_track_clickback : true,
+        title : "",
+        summary : "最近占了点小便宜，纠结好久要不要告诉大家，淘宝买东西自动返集分宝这种事，我怎么会随便乱讲呢？只能透露这么多了，自己去看吧，神器地址：",
+        shortUrl : true,
+        url : "<{$invite_url}>",
+        hideMore : false,
+        data_track_clickback : true,
+        evt : {
+            "share" : "onShareBtnClick"
+        }
+    };
+
+    function onShareBtnClick(evt) {
+
+        $.post("?c=promotion&a=add_share", {
+            webid : evt.data.service
+        }, function(data, status) {
+        });
+
+    }
+
+    function get_detail(page) {
+
+        $("#detail_table").html("<div class='progress progress-striped active' ><div class=bar style=width:90%></div></div>");
+        var account_id = $("#account_id").val();
+        $.post("?c=promotion&a=detail", {
+            page : page
+        }, function(data, status) {
+            $("#detail_table").html(data);
+        });
+    }
+
+
+    $("#get_detail").click(function() {
+        get_detail(1);
+    });
+
+    $("#get_detail_url").click(function() {
+        $("#get_detail").click();
+    });
+
+    $('#mytip').tooltip(); 
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1600503" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+<script type="text/javascript" src="js/ZeroClipboard.js"></script>
+
+<script language="JavaScript">
+    
+    
+    
+    function initClip(){
+        
+        var clip = new ZeroClipboard.Client();
+            //ZeroClipboard.setMoviePath('img/ZeroClipboard.swf') ;
+            clip.setHandCursor(true); 
+            clip.addEventListener('mouseOver', function (client) {
+                clip.setText($("#invite_url").html());
+            });
+            clip.addEventListener('complete', function (client, text) {
+                alert('推广链接已经复制到剪贴板') ;
+            });
+            clip.glue('copy_btn');
+    }
+
+    
+    
+    
+    initClip();
+</script>

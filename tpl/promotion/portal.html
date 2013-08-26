@@ -2,27 +2,122 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>costa</title>
+        <title></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"  >
         <link href="css/bootstrap-responsive.css" rel="stylesheet">
         <!-- Bootstrap -->
         <link href="css/main.css" rel="stylesheet" media="screen">
         <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
     </head>
-    <body>
+    <body >
 
         <div class="container">
-            <div class="row-fluid">
-                <div class="span12">
-                    <div class="hero-unit">
-                        <h2> 好友一起省，现金送不停 </h2>
-                        <p>
-                            分享快乐，省钱、赚钱两不误
-                        </p>
+
+            <div class="row-fluid" >
+
+                <div class="tabbable" id="tabs-872706">
+                    <ul class="nav nav-pills">
+                        <li class="active">
+                            <a href="#panel-801905" data-toggle="tab">我的推广</a>
+                        </li>
+                        <li>
+                            <a href="#panel-353373" data-toggle="tab" id="get_detail">奖励明细</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="panel-801905">
+                            <h4>我的推广收入</h4>
+                            <table class="table" width="70%">
+                                <tr>
+                                    <td>有效收入:</td>
+                                    <td>待确认收入:&nbsp;<a id="mytip" title="" data-placement="bottom" data-toggle="tooltip" href="#" data-original-title="被推荐朋友的第一笔返利款到账前，奖金状态为【待确认】"><i class="icon-question-sign"></i></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    <p style="font-size:24px; ">
+                                        ￥<{$ttl_valid}>
+                                    </p></td>
+                                    <td>
+                                    <p style="font-size:24px; ">
+                                        ￥<{$ttl_unconfirmed}>
+                                    </p></td><td><a href="javascript:;" id="get_detail_url">>>查看明细</a></td>
+                                </tr>
+                            </table>
+                            <div class="row-fluid">
+                                
+                                <h4 >您的专属推广链接：</h4> 
+                                <div class="alert alert-block"  align="center">
+
+                                    <h3>&nbsp;<span style="color: black;" id="invite_url"><{$invite_url}></span>&nbsp;<a class="btn btn-danger btn-large " role="button" id="copy_btn"><i class="icon-copy">&nbsp;复制链接</i></a></h3>
+                                    
+                                    <strong>专属推广链接是通过你的支付宝帐号加密生成的点点折访问链接，只要朋友通过以上链接首次访问点点折，并下单成功，你就可以得到推广奖励</strong>
+
+                                </div>
+
+                            </div>
+                            <div class="row-fluid">
+
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                            <p>
+                                                <i class="icon-chevron-right"></i><strong>通过微博、社区一键分享</strong>
+                                            </p>
+                                            <div class="jiathis_style_32x32" >
+                                                <a class="jiathis_button_tsina">&nbsp;</a>
+                                                <a class="jiathis_button_cqq">&nbsp;</a>
+                                                <a class="jiathis_button_qzone">&nbsp;</a>
+                                                <a class="jiathis_button_tqq">&nbsp;</a>
+                                                <a class="jiathis_button_kaixin001">&nbsp;</a>
+                                                <a class="jiathis_button_renren">&nbsp;</a>
+                                                <a href="http://www.jiathis.com/share?uid=1600503" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+                                            </div></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                            <p>
+                                                <i class="icon-chevron-right"></i><strong>通过QQ、旺旺等发送推荐</strong>
+                                            </p><a href="#modal_promotion_text" role="button" class="btn btn-warning" data-toggle="modal">推荐给QQ好友</a>&nbsp; <a href="#modal_promotion_text" role="button" class="btn btn-warning" data-toggle="modal">推荐给旺旺好友</a>&nbsp; </td>
+                                        </tr>
+                                        <!-- <tr>
+                                        <td>
+                                        <p>
+                                        <i class="icon-chevron-right"></i><strong>通过邮件、短信推荐（免费）</strong>
+                                        </p><a href="#modal_msg" role="button " class="btn btn-info" data-toggle="modal"><i class="icon-envelope icon-large"></i>&nbsp;邮件推荐好友</a>&nbsp; <a href="#modal_msg" role="button" class="btn btn-success" data-toggle="modal"><i class="icon-comment-alt icon-large"></i>&nbsp;短信推荐（免费）</a></td>
+                                        </tr> -->
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="panel-353373">
+                            <p >
+                                <h4>奖励明细</h4>
+                            </p>
+
+                            <!--明细记录-->
+                            <div id="detail_table"></div>
+
+                        </div>
                     </div>
                 </div>
+
             </div>
+
         </div>
+
+        <input type="hidden" value="<{$accountid}>" id="accountid"  />
+
+        <{include file="promotion/jiathis.html"}>
+
+        <{include file="promotion/promotion_modal.html"}>
+        <!-- bootstrap js -->
 
     </body>
 </html>

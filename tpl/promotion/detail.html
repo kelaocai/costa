@@ -1,0 +1,28 @@
+
+        <table class="table table-bordered table-hover" >
+            
+            <thead >
+                <tr >
+                    <th width="30%" >好友支付宝帐号 </th>
+                    <th width="30%"> 创建日期 </th>
+                    <th width="20%"> 返利笔数 </th>
+                    <th width="20%" align="center"> 奖金状态 </th>
+                </tr>
+            </thead>
+            <tbody>
+                <{if $rs }>
+                <{foreach from=$rs item=row}>
+                <tr >
+                    <td> <{utfSub str=$row.ALIPAY_ID len=3 ex='***'}></td>
+                    <td> <{$row.GMT_CREATE}></td>
+                    <td> <{friendTrade cnt=$row.REBATE_TRADE_COUNT}></td>
+                    <td ><{promStatus cnt=$row.REBATE_TRADE_COUNT}></td>
+                </tr>
+                <{/foreach}>
+                <{/if }>
+
+            </tbody>
+        </table>
+        <{include file="pager.html"}>
+
+  

@@ -1,8 +1,14 @@
 <?php
 define("APP_PATH",dirname(__FILE__));
 define("SP_PATH",dirname(__FILE__).'/SpeedPHP');
-$spConfig = array(
+require (APP_PATH . "/include/config.php");
 
+$spConfig = array(
+"db" => array(
+				'host' => DB_HOST, // 数据库地址
+				'login' => DB_USER, // 数据库用户名
+				'password' => DB_PASSWORD, // 数据库密码
+				'database' => DB_DATABASE),
 'view' => array(
 				'enabled' => TRUE, // 开启Smarty
 				'config' =>array(
@@ -20,4 +26,5 @@ $spConfig = array(
 
 );
 require(SP_PATH."/SpeedPHP.php");
+import('utility.php');
 spRun();

@@ -1,0 +1,36 @@
+<{if $pager}>
+<div class="pagination">
+    <ul>
+        <!--在当前页不是第一页的时候，显示前页和上一页-->
+        <{if $pager.current_page != $pager.first_page}>
+        <li>
+            <a href="#" onclick="get_detail(<{$pager.first_page}>)">最前页</a>
+        </li>
+        <li>
+            <a href="#" onclick="get_detail(<{$pager.prev_page}>)">上一页</a>
+        </li>
+        <{/if}>
+        <!--开始循环页码，同时如果循环到当前页则不显示链接-->
+        <{foreach from=$pager.all_pages item=thepage}>
+        <{if $thepage != $pager.current_page}>
+        <li>
+            <a href="#" onclick="get_detail(<{$thepage}>)"><{$thepage}></a>
+        </li>
+        <{else}>
+        <li class="active">
+           <a href="#"><{$thepage}></a>
+        </li>
+        <{/if}>
+        <{/foreach}>
+        <!--在当前页不是最后一页的时候，显示下一页和后页-->
+        <{if $pager.current_page != $pager.last_page}>
+        <li>
+            <a href="#" onclick="get_detail(<{$pager.next_page}>)">下一页</a>
+        </li>
+        <li>
+            <a href="#" onclick="get_detail(<{$pager.last_page}>)">最后页</a>
+        </li>
+        <{/if}>
+    </ul>
+</div>
+<{/if}> 
