@@ -27,4 +27,5 @@ $spConfig = array(
 );
 require(SP_PATH."/SpeedPHP.php");
 import('utility.php');
+
 spRun();
