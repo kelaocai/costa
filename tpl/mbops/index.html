@@ -20,17 +20,34 @@
             <div class="row-fluid" >
                 <h4>结算统计</h4>
                 <p>
-                    未结算现金：【￥<{$ttl_cash}>】共【<{$ttl_cash_cnt}>】 条记录
+                    <li class="icon-ok"></li>
+                    未结算现金
+                </p>
+                <p>
+                    共【<{$ttl_cash_cnt}>】 条记录 合计【￥<{$ttl_cash}>】
                 </p>
             </div>
 
             <div class="row-fluid" >
-                <h4>实时报表</h4>
+                <h4></h4>
                 <p>
-                    实时订单：截至【<{$ttl_real_date}>】共【<{$ttl_real_cnt}>】 条记录，合计【￥<{$ttl_real_commission}>】
+                    <li class="icon-ok"></li>
+                    实时订单：截至【<{$ttl_real_date}>】
                 </p>
                 <p>
-                    实时确认收货：共【<{$ttl_cnt_confirm}>】 条记录，合计【￥<{$ttl_sum_confirm}>】
+                <p>
+                    共【<{$ttl_real_cnt}>】 条记录
+
+                    合计【￥<{$ttl_real_commission}>】
+                <p></p>
+                <p>
+                    <li class="icon-ok"></li>
+                    实时确认收货
+                <p>
+                    共【<{$ttl_cnt_confirm}>】 条记录
+
+                    合计【￥<{$ttl_sum_confirm}>】
+                </p>
                 </p>
             </div>
 
