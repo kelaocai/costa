@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title></title>
+        <title>点点折实时统计</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"  >
         <link href="css/bootstrap-responsive.css" rel="stylesheet">
         <!-- Bootstrap -->
@@ -24,7 +24,7 @@
                     未结算现金
                 </p>
                 <p>
-                    共【<{$ttl_cash_cnt}>】 条记录 合计【￥<{$ttl_cash}>】
+                    共【<{$ttl_cash_cnt}>】 条 合计【￥<{$ttl_cash}>】
                 </p>
             </div>
 
@@ -32,11 +32,13 @@
                 <h4></h4>
                 <p>
                     <li class="icon-ok"></li>
-                    实时订单：截至【<{$ttl_real_date}>】
+                    实时订单
+                    <br>
+                    <small >【<{$ttl_real_date}>】</small>
                 </p>
                 <p>
                 <p>
-                    共【<{$ttl_real_cnt}>】 条记录
+                    共【<{$ttl_real_cnt}>】 条
 
                     合计【￥<{$ttl_real_commission}>】
                 <p></p>
@@ -44,7 +46,7 @@
                     <li class="icon-ok"></li>
                     实时确认收货
                 <p>
-                    共【<{$ttl_cnt_confirm}>】 条记录
+                    共【<{$ttl_cnt_confirm}>】 条
 
                     合计【￥<{$ttl_sum_confirm}>】
                 </p>
