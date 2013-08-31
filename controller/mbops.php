@@ -11,8 +11,8 @@ class mbops extends spController {
 		$this -> ttl_cash_cnt = $rs_sum['cnt'];
 		
 		$conditon = array("outcode_type" => 'J', "settle_status" => 'U');
-		$rs_sum_jfb = $db -> find($conditon, null, "count(*) cnt ,sum(settle_fee) as fee");
-		$this -> ttl_jfb = round($rs_sum_jfb['fee'], 2);
+		$rs_sum_jfb = $db -> find($conditon, null, "count(*) cnt ,sum(settle_JFB) as fee");
+		$this -> ttl_jfb = round($rs_sum_jfb['fee']/100, 2);
 		$this -> ttl_jfb_cnt = $rs_sum_jfb['cnt'];
 		
 		//查看实时订单
