@@ -6,10 +6,15 @@ class mbops extends spController {
 		$db = spDB("DDZ_TAOKE_REPORT_SETTLE");
 		//统计现金未结算佣金合计
 		$conditon = array("outcode_type" => 'B', "settle_status" => 'U');
-		$rs_cnt = $db -> findCount($conditon);
-		$rs_sum = $db -> find($conditon, null, "sum(settle_fee) as fee");
+		$rs_sum = $db -> find($conditon, null, "count(*) cnt ,sum(settle_fee) as fee");
 		$this -> ttl_cash = round($rs_sum['fee'], 2);
-		$this -> ttl_cash_cnt = $rs_cnt;
+		$this -> ttl_cash_cnt = $rs_sum['cnt'];
+		
+		$conditon = array("outcode_type" => 'J', "settle_status" => 'U');
+		$rs_sum_jfb = $db -> find($conditon, null, "count(*) cnt ,sum(settle_fee) as fee");
+		$this -> ttl_jfb = round($rs_sum_jfb['fee'], 2);
+		$this -> ttl_jfb_cnt = $rs_sum_jfb['cnt'];
+		
 		//查看实时订单
 		$today=date("Y-m-d",time());
 		//echo($today);
