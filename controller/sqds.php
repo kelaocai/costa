@@ -73,13 +73,13 @@ class sqds extends spController {
 			if (!$create_rs) {
 				$this -> msg = "信息提交失败,请重试!";
 			} else {
-				$this -> msg = "报名成功!";
+				//$this -> msg = "报名成功!";
 				$this -> rs_flag = TRUE;
 			}
 
 		} else {
 			$this -> rs_flag = TRUE;
-			$this -> msg = "该支付宝帐号已经报名!";
+			//$this -> msg = "该支付宝帐号已经报名!";
 		}
 
 	}
