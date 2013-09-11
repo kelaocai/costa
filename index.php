@@ -4,6 +4,7 @@ define("SP_PATH",dirname(__FILE__).'/SpeedPHP');
 require (APP_PATH . "/include/config.php");
 
 $spConfig = array(
+'mode'=>MODE,
 "db" => array(
 				'host' => DB_HOST, // 数据库地址
 				'login' => DB_USER, // 数据库用户名
