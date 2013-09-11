@@ -6,7 +6,7 @@ class sqds extends spController {
 	}
 	
 	function submit() {
-		echo "okok";
+		
 	}
 
 }
