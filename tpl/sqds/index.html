@@ -13,29 +13,37 @@
         <script src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="scrollable.js"></script>
     </head>
-    <body >
+    <body style="background: url('img/noise.png') repeat" >
 
-        <div class="container-fluid " style="background:#cc1645" >
+        <div class="container-fluid " >
             <div class="row-fluid " >
 
-               
                 <div class="row-fluid" id="wizard" >
-                    <img src="img/sqdsbg.png" />
+
                     <div class="span12 "  >
                         <form method="post" action=<{spUrl c=sqds a=submit}> >
                             <fieldset>
-                               
+                                <h5>高校省钱大赛-深信站-报名</h5>
                                 <label>参赛支付宝帐号</label>
-                                <input type="text" name="alipayno">
+                                <div class="input-prepend input-append">
+                                    <span class="add-on"><strong>￥</strong></span>
+                                    <input  type="text">
+                                </div>
                                 <label>学号</label>
-                                <input type="text" name="sn">
+                                <div class="input-prepend input-append">
+                                    <span class="add-on"><i class="icon-user"></i></span>
+                                    <input   type="text">
+                                </div>
                                 <label>联系手机</label>
-                                <input type="text" name="phoneno">
+                                <div class="input-prepend input-append">
+                                    <span class="add-on"><i class="icon-comment"></i></span>
+                                    <input   type="text">
+                                </div>
                                 <label></label>
-                                <button type="submit" class="btn">
+                                <button type="submit" class="btn btn-success">
                                     提交报名
                                 </button>
-                               
+
                             </fieldset>
                         </form>
                     </div>
