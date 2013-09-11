@@ -4,6 +4,10 @@ class sqds extends spController {
 	function index() {
 
 	}
+	
+	function reg() {
+
+	}
 
 	function submit() {
 		//判断检查DDZ帐号情况
@@ -74,6 +78,7 @@ class sqds extends spController {
 			}
 
 		} else {
+			$this -> rs_flag = TRUE;
 			$this -> msg = "该支付宝帐号已经报名!";
 		}
 

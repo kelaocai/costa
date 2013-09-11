@@ -1,9 +1,27 @@
 <{include file="sqds/sq_head.html"}>
 
 <div class="container-fluid " >
-    <div class="row-fluid span9" style="margin-top: 10%" >
+    <div class="row-fluid " style="margin-top: 10%" >
+        <div >
+            <h5 class="text"><{if $rs_flag}><i class="icon-ok"></i><{else}><i class="icon-remove"></i><{/if}>&nbsp;<{$msg}></h5>
 
-        <h4 class="text-center"><{if $rs_flag}><i class="icon-ok"></i><{else}><i class="icon-remove"></i><{/if}>&nbsp;<{$msg}></h4>
+            <p>
+                <{if !$rs_flag}>
+                <a class="btn btn-primary btn-small" href="javascript:history.back();"> 返回报名页 </a>
+                <{else}>
+                <ul>
+                    <li>
+                        <small>关注点点折微信号，发送“省钱大赛”，了解活动最新消息</small>
+                    </li>
+                    <li>
+                        <small>登录活动官网：<a href="http://sziit.diandianzhe.com"> sziit.diandianzhe.com </a> 参与互动抽奖</small>
+                    </li>
+                </ul>
+                <{/if}>
+
+            </p>
+        </div>
+
     </div>
 </div>
 
