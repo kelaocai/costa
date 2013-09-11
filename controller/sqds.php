@@ -50,12 +50,13 @@ class sqds extends spController {
 		}
 		
 
-		//如果没有spm标识,归为大赛推荐
+		/*如果没有spm标识,归为大赛推荐
 		if (($uid > 0) & ((strcasecmp('', $spm) == 0 )|| empty($spm))) {
 			$up_condition = array('id' => $uid);
 			$up_content = array('REG_SPM' => $spm_mark);
 			$up_rs = $db_ddz_account -> update($up_condition, $up_content);
 		}
+		*/
 
 		//创建报名数据
 		$db_sq_reg = spDB("SQ_REG");
