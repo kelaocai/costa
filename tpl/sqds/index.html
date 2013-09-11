@@ -11,30 +11,36 @@
         <link rel="stylesheet" href="css/font-awesome.min.css">
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="scrollable.js"></script>
     </head>
     <body >
 
-        <div class="container-fluid " >
+        <div class="container-fluid " style="background:#cc1645" >
             <div class="row-fluid " >
-                
-                    <div class="row-fluid">
-                        <div class="span12 " >
-                          <img src="img/sqdsbg.png" />
-                        </div>
-                    </div>
-                    <div class="row-fluid">
-                        <div class="span12 " >
-                            <form class="form-inline">
-                                支付宝帐号：
-                                <input type="text" class="input-big" placeholder="输入接受返利的支付宝帐号">
-                                <button type="submit" class="btn btn-primary">
-                                    报名参赛
+
+               
+                <div class="row-fluid" id="wizard" >
+                    <img src="img/sqdsbg.png" />
+                    <div class="span12 "  >
+                        <form method="post" action=<{spUrl c=sqds a=submit}> >
+                            <fieldset>
+                               
+                                <label>参赛支付宝帐号</label>
+                                <input type="text" name="alipayno">
+                                <label>学号</label>
+                                <input type="text" name="sn">
+                                <label>联系手机</label>
+                                <input type="text" name="phoneno">
+                                <label></label>
+                                <button type="submit" class="btn">
+                                    提交报名
                                 </button>
-                                
-                            </form>
-                        </div>
+                               
+                            </fieldset>
+                        </form>
                     </div>
-              
+                </div>
+
             </div>
         </div>
 
