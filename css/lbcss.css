@@ -1,5 +1,4 @@
-﻿
-@charset "utf-8";
+﻿@charset "utf-8";
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, table, tbody, fieldset, input, textarea, p, blockquote, th, td {
 	margin: 0;
 	padding: 0;
@@ -48,8 +47,8 @@ body {
 	background: #03386d;
 }
 .banner_box {
-	height: 308px;
-	background: url(../img/btbg.jpg) repeat-x;
+	height: 745px;
+	background: url(../img/sqdsbt.jpg) repeat-x;
 }
 .banner_content, .down_content, .ban_img, #footer, #main, .function_list, .link_box, .process_img {
 	width: 980px;
@@ -78,7 +77,8 @@ body {
 }
 .ban_img {
 	height: 287px;
-	margin-top:-30px;
+	margin-right: 411px;
+	margin-top: -34px;
 	background: url(../img/bt.png) no-repeat top;
 	overflow: hidden;
 }
@@ -90,7 +90,7 @@ body {
 	width: 530px;
 	height: 100px;
 	position: relative;
-	margin-top:-100px;
+	margin-top: -100px;
 	padding-left: 450px;
 	margin: 0 auto;
 }
@@ -204,7 +204,7 @@ body {
 	font-size: 12px;
 }
 #linktext a {
-	color: red;
+	color: #fff5dc;
 	text-decoration: none;
 }
 #linktext a:hover {
@@ -220,8 +220,8 @@ body {
 	height: 52px;
 	line-height: 52px;
 	font-size: 24px;
-	color: #FA1364;
-	border-bottom: 1px dashed #656565;
+	color: #fff5dc;
+	border-bottom: 1px dashed #B9B9B9;
 	clear: both;
 }
 
@@ -230,8 +230,21 @@ body {
 	height: 52px;
 	line-height: 52px;
 	font-size: 18px;
-	color: grey;
+	color: #fff5dc;
 	clear: both;
+}
+.phb {
+	margin-bottom:-100px;
+	height: 564px;
+    margin-top: -130px;
+    padding-left: 272px;
+    padding-top: 346px;
+	background: url(../img/phb.png) no-repeat center;
+}
+
+.phbhot {
+	margin-left: 100px;
+	margin-top: 100px;
 }
 
 .title.pt {
@@ -255,7 +268,7 @@ body {
 .link_box {
 	display: block;
 	height: 70px;
-	margin-top:50px;
+	margin-top: 50px;
 	margin-bottom: 20px;
 	background: url(../img/x_hr.png) no-repeat left center;
 }
@@ -524,6 +537,6 @@ body {
 	height: 80px;
 	padding-top: 14px;
 	border-top: 1px dashed #b9b9b9;
-	color: #666;
+	color: #fff5dc;
 	text-align: center;
 }
