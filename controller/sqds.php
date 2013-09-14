@@ -14,7 +14,7 @@ class sqds extends spController {
 		$uid = 0;
 		$spm = '';
 		$spm_mark = 'a.sziit';
-		$alipay_id = trim($this -> spArgs('alipay_id'));
+		$alipay_id =strtolower(trim($this -> spArgs('alipay_id')));
 		$phone_no = trim($this -> spArgs('phone_no'));
 		$sn = trim($this -> spArgs('sn'));
 		$rs_flag = FALSE;
