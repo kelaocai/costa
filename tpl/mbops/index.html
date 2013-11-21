@@ -16,12 +16,7 @@
     <body >
 
         <div class="container-fluid">
-            <div class="row-fluid">
-                <span class="label label-info">双11老财发红包</span>
-                <a href="https://hongbao.alipay.com/coupon/getbybtn.htm?id=20131106000291010072030000012372&type=button&ac=10d955213fdc78eb1e00bcaf0033799c" target="_blank"><img alt="立即点击领取" src="https://img.alipay.com/pa/img/user/coupon/getcouponbtn.png" align="absmiddle" border="0"><div align="center" style="font-size:12px;color:#0000FF;padding-top:5px; text-decoration:underline;width:174px;"></div></a>
-                <br>
 
-            </div>
             <div class="row-fluid" >
                 <h4>结算统计</h4>
                 <p>
@@ -65,9 +60,41 @@
                 </p>
             </div>
 
+            <div class="row-fluid">
+                <button class="btn-primary" id="btn_ttl">
+                    统计
+                </button>
+                <p>
+                    本月打款，共：【<span id="ttl_cnt_pay"></span>】条，合计：【￥<span id="ttl_sum_pay"></span>】,日均:【￥<span id="avg_pay"></span>】
+                </p>
+                <p>
+                    现金打款，共：【<span id="ttl_cnt_pay_cash"></span>】条，合计：【￥<span id="ttl_sum_pay_cash"></span>】
+                </p>
+                <p>
+                    集分宝打款，共：【<span id="ttl_cnt_pay_jfb"></span>】条，合计：【￥<span id="ttl_sum_pay_jfb"></span>】
+                </p>
+            </div>
+
         </div>
 
         <!-- bootstrap js -->
+        <script>
+            $(document).ready(function() {
+
+                $("#btn_ttl").click(function() {
+                    $.getJSON('?c=mbops&a=sum_pay', function(data) {
+                        $("#ttl_cnt_pay_cash").html(data['ttl_cnt_pay_cash']);
+                        $("#ttl_sum_pay_cash").html(data['ttl_sum_pay_cash']);
+                        $("#ttl_cnt_pay_jfb").html(data['ttl_cnt_pay_jfb']);
+                        $("#ttl_sum_pay_jfb").html(data['ttl_sum_pay_jfb']);
+                        $("#ttl_cnt_pay").html(data['ttl_cnt_pay']);
+                        $("#ttl_sum_pay").html(data['ttl_sum_pay']);
+                        $("#avg_pay").html(data['avg_pay']);
+                    })
+                });
+
+            });
+        </script>
 
     </body>
 </html>

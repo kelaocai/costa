@@ -2,7 +2,7 @@
 define("APP_PATH",dirname(__FILE__));
 define("SP_PATH",dirname(__FILE__).'/SpeedPHP');
 require (APP_PATH . "/include/config.php");
-
+require (APP_PATH . "/include/fb.php");
 $spConfig = array(
 'mode'=>MODE,
 "db" => array(
