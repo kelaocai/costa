@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="css/font-awesome.min.css">
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="my97date/WdatePicker.js"></script>
 
     </head>
     <body >
@@ -19,6 +20,13 @@
 
             <div class="row-fluid" >
                 <h4>结算统计</h4>
+                
+                <p>
+                    <form action="?c=mbops&a=index" method="post" class="form-inline">
+                    日期：<input type="text" name="mydate"  onClick="WdatePicker()" style="width: 100px;"/>
+                    <button type="submit" class="btn btn-success">查询</button>
+                    </form>
+                </p>
                 <p>
                     <li class="icon-ok"></li>
                     未结算现金

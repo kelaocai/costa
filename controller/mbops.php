@@ -15,11 +15,15 @@ class mbops extends spController {
 		$this -> ttl_jfb = round($rs_sum_jfb['fee'] / 100, 2);
 		$this -> ttl_jfb_cnt = $rs_sum_jfb['cnt'];
 
+		$mydate = date("Y-m-d", time());
+		if($this->spArgs('mydate')){
+			$mydate=$this->spArgs('mydate');
+		}
+		
 		//查看实时订单
-		$today = date("Y-m-d", time());
 		//echo($today);
 		$db = spDB("DDZ_TAOKE_ORDER_LOG");
-		$conditon = array("date(GMT_CREATE)" => $today, "STATUS" => "S", "TYPE" => 'UP');
+		$conditon = array("date(GMT_CREATE)" => $mydate, "STATUS" => "S", "TYPE" => 'UP');
 		$rs_order = $db -> find($conditon, "GMT_CREATE DESC", null);
 		$rs_dtl = json_decode($rs_order['DETAIL']);
 		//dump($rs_dtl);
@@ -29,7 +33,7 @@ class mbops extends spController {
 
 		//实时确认收货
 		$db = spDB("DDZ_TAOKE_REPORT");
-		$conditon = array("date(GMT_PAID)" => $today);
+		$conditon = array("date(GMT_PAID)" => $mydate);
 		$rs_report = $db -> find($conditon, null, "SUM(COMMISSION) comminsion,count(*) cnt");
 		$this -> ttl_cnt_confirm = $rs_report['cnt'];
 		$this -> ttl_sum_confirm = round($rs_report['comminsion'],2);
