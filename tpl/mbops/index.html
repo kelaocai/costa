@@ -23,7 +23,7 @@
                 
                 <p>
                     <form action="?c=mbops&a=index" method="post" class="form-inline ">
-                    日期：<input type="text" name="mydate"  onClick="WdatePicker()" style="width: 100px;" autocomplete="off"/>
+                    <input type="text" name="mydate"  onClick="WdatePicker()" style="width: 100px;" autocomplete="off" value="查询日期"/>
                     <button type="submit" class="btn btn-success">查询</button>
                     </form>
                 </p>
@@ -69,9 +69,10 @@
             </div>
 
             <div class="row-fluid">
-                <button class="btn-primary" id="btn_ttl">
-                    统计
-                </button>
+                
+               <input type="button" id="date_start"  onClick="WdatePicker()" style="width: 100px;" autocomplete="off" autocorrect="off" autofocus="off" value="开始日期"/>
+               
+               <button class="btn btn-primary" id="btn_ttl">统计</button>
                 <p>
                     本月打款，共：【<span id="ttl_cnt_pay"></span>】条，合计：【￥<span id="ttl_sum_pay"></span>】,日均:【￥<span id="avg_pay"></span>】
                 </p>
@@ -90,7 +91,8 @@
             $(document).ready(function() {
 
                 $("#btn_ttl").click(function() {
-                    $.getJSON('?c=mbops&a=sum_pay', function(data) {
+                    var date_start=$("#date_start").val();
+                    $.getJSON('?c=mbops&a=sum_pay&date_start='+date_start, function(data) {
                         $("#ttl_cnt_pay_cash").html(data['ttl_cnt_pay_cash']);
                         $("#ttl_sum_pay_cash").html(data['ttl_sum_pay_cash']);
                         $("#ttl_cnt_pay_jfb").html(data['ttl_cnt_pay_jfb']);

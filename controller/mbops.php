@@ -20,6 +20,7 @@ class mbops extends spController {
 			$mydate=$this->spArgs('mydate');
 		}
 		
+		fb($mydate,'mydate');
 		//查看实时订单
 		//echo($today);
 		$db = spDB("DDZ_TAOKE_ORDER_LOG");
@@ -47,6 +48,11 @@ class mbops extends spController {
 		$db = spDB('DDZ_TAOKE_REPORT_SETTLE');
 		//本月第一天
 		$date_start = date('Y-m-d', mktime(0, 0, 0, date('n'), 1, date('Y')));
+		
+		if($this->spArgs('date_start')){
+			$date_start=$this->spArgs('date_start');
+		}
+		
 		//Today
 		$today = date("Y-m-d", time());
 		$interval=floor((strtotime($today)-strtotime($date_start))/86400);
