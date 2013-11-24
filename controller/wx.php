@@ -2,7 +2,7 @@
 
 define("TOKEN", "1qaz2wsx");
 
-class mbops extends spController {
+class wx extends spController {
 	
 	function wxreader(){
 		
