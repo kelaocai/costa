@@ -6,6 +6,14 @@ class wx extends spController {
 	
 	function wxreader(){
 		
+		$echoStr = $_GET["echostr"];
+
+        //valid signature , option
+        if($this->check()){
+        	echo $echoStr;
+        	exit;
+        }
+		
 	}
 	
 	
