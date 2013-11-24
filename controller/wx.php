@@ -12,7 +12,7 @@ class wx extends spController {
         if($this->check()){
         	//echo $echoStr;
         	//exit;
-        	responseMsg();
+        	$this->responseMsg();
         }
 		
 	}
