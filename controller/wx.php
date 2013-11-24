@@ -42,7 +42,7 @@ class wx extends spController {
 				if(!empty( $keyword ))
                 {
               		$msgType = "text";
-                	$contentStr = "Welcome to wechat world!";
+                	$contentStr = "感谢关注！《朋友圈文摘》为大家提供好文摘录，欢迎投稿。";
                 	$resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
                 	echo $resultStr;
                 }else{
