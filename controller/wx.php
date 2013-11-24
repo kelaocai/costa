@@ -9,6 +9,17 @@ class wx extends spController {
 	}
 	
 	
+	function valid()
+    {
+        $echoStr = $_GET["echostr"];
+
+        //valid signature , option
+        if($this->check()){
+        	echo $echoStr;
+        	exit;
+        }
+    }
+	
 	function check()
 	{
         $signature = $_GET["signature"];
