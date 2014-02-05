@@ -89,9 +89,17 @@ class mbops extends spController {
 		$ttl_sum_pay = round($ttl_sum_pay_cash + $ttl_sum_pay_jfb*(1.07),2);
 		
 		$avg_pay=round($ttl_sum_pay/$interval,2);
+		
+		//未提现资金余额
+		$db = spDB('DDZ_ACCOUNT');
+		$rs_report=$db -> find(null, null, "SUM(JFB_AMOUNT)/100+SUM(CASH_AMOUNT) AS balance");
+		$ttl_sum_balance=round($rs_report['balance'],2);
 
-		$rs = array('ttl_cnt_pay_cash' => $ttl_cnt_pay_cash, 'ttl_sum_pay_cash' => $ttl_sum_pay_cash, 'ttl_cnt_pay_jfb' => $ttl_cnt_pay_jfb, 'ttl_sum_pay_jfb' => $ttl_sum_pay_jfb,'ttl_cnt_pay'=>$ttl_cnt_pay,'ttl_sum_pay'=>$ttl_sum_pay,'avg_pay'=>$avg_pay);
+		$rs = array('ttl_cnt_pay_cash' => $ttl_cnt_pay_cash, 'ttl_sum_pay_cash' => $ttl_sum_pay_cash, 'ttl_cnt_pay_jfb' => $ttl_cnt_pay_jfb, 'ttl_sum_pay_jfb' => $ttl_sum_pay_jfb,'ttl_cnt_pay'=>$ttl_cnt_pay,'ttl_sum_pay'=>$ttl_sum_pay,'avg_pay'=>$avg_pay,'ttl_sum_balance'=>$ttl_sum_balance);
 		echo json_encode($rs);
+		
+		
+		
 
 	}
 

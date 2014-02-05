@@ -15,7 +15,7 @@
 
     </head>
     <body >
-
+<!-- <iframe name="alimamaifrm" frameborder="0" marginheight="0" marginwidth="0" border="0" scrolling="no" width="950" height="30" src="http://www.taobao.com/go/app/tbk_app/chongzhi_950_30.php?pid=mm_30820461_3255384_10837480&page=chongzhi_950_30.php&size_w=950&size_h=30&stru_phone=1&stru_game=1&stru_travel=1" ></iframe> -->
         <div class="container-fluid">
 
             <div class="row-fluid" >
@@ -82,6 +82,10 @@
                 <p>
                     集分宝打款，共：【<span id="ttl_cnt_pay_jfb"></span>】条，合计：【￥<span id="ttl_sum_pay_jfb"></span>】
                 </p>
+                
+                <p>
+                    未提现资金余额合计：【￥<span id="ttl_sum_balance"></span>】
+                </p>
             </div>
 
         </div>
@@ -100,6 +104,7 @@
                         $("#ttl_cnt_pay").html(data['ttl_cnt_pay']);
                         $("#ttl_sum_pay").html(data['ttl_sum_pay']);
                         $("#avg_pay").html(data['avg_pay']);
+                        $("#ttl_sum_balance").html(data['ttl_sum_balance']);
                     })
                 });
 
