@@ -2,6 +2,11 @@
 class mbops extends spController {
 
 	function index() {
+		
+		//同步实时订单数据
+		$url='http://api.diandianzhe.com/corner/service/remote/rest/order_upload.htm';
+		$html = file_get_contents($url);
+		
 
 		$db = spDB("DDZ_TAOKE_REPORT_SETTLE");
 		//统计现金未结算佣金合计

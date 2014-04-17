@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"  >
         <link href="css/bootstrap-responsive.css" rel="stylesheet">
         <!-- Bootstrap -->
-        <link href="css/main.css" rel="stylesheet" media="screen">
         <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link rel="stylesheet" href="css/font-awesome.min.css">
         <script src="js/jquery.min.js"></script>
@@ -15,16 +14,18 @@
 
     </head>
     <body >
-<!-- <iframe name="alimamaifrm" frameborder="0" marginheight="0" marginwidth="0" border="0" scrolling="no" width="950" height="30" src="http://www.taobao.com/go/app/tbk_app/chongzhi_950_30.php?pid=mm_30820461_3255384_10837480&page=chongzhi_950_30.php&size_w=950&size_h=30&stru_phone=1&stru_game=1&stru_travel=1" ></iframe> -->
+        <!-- <iframe name="alimamaifrm" frameborder="0" marginheight="0" marginwidth="0" border="0" scrolling="no" width="950" height="30" src="http://www.taobao.com/go/app/tbk_app/chongzhi_950_30.php?pid=mm_30820461_3255384_10837480&page=chongzhi_950_30.php&size_w=950&size_h=30&stru_phone=1&stru_game=1&stru_travel=1" ></iframe> -->
         <div class="container-fluid">
 
             <div class="row-fluid" >
                 <h4>结算统计</h4>
-                
+
                 <p>
                     <form action="?c=mbops&a=index" method="post" class="form-inline ">
-                    <input type="text" name="mydate" readonly onClick="WdatePicker()" style="width: 100px;" autocomplete="off" value="查询日期"/>
-                    <button type="submit" class="btn btn-success">查询</button>
+                        <input type="text" name="mydate" readonly onClick="WdatePicker()" style="width: 100px;" autocomplete="off" value="查询日期"/>
+                        <button type="submit" class="btn btn-success">
+                            查询
+                        </button>
                     </form>
                 </p>
                 <a href="" class="btn btn-info"  id="btn_syn_order">同步实时订单</a>
@@ -70,10 +71,12 @@
             </div>
 
             <div class="row-fluid">
-                
-               <input type="button" id="date_start"  onClick="WdatePicker()" style="width: 100px;" autocomplete="off" autocorrect="off" autofocus="off" value="开始日期" />
-               
-               <button class="btn btn-primary" id="btn_ttl">统计</button>
+
+                <input type="button" id="date_start"  onClick="WdatePicker()" style="width: 100px;" autocomplete="off" autocorrect="off" autofocus="off" value="开始日期" />
+
+                <button class="btn btn-primary" id="btn_ttl">
+                    统计
+                </button>
                 <p>
                     本月打款，共：【<span id="ttl_cnt_pay"></span>】条，合计：【￥<span id="ttl_sum_pay"></span>】,日均:【￥<span id="avg_pay"></span>】
                 </p>
@@ -83,7 +86,7 @@
                 <p>
                     集分宝打款，共：【<span id="ttl_cnt_pay_jfb"></span>】条，合计：【￥<span id="ttl_sum_pay_jfb"></span>】
                 </p>
-                
+
                 <p>
                     未提现资金余额合计：【￥<span id="ttl_sum_balance"></span>】
                 </p>
@@ -96,8 +99,8 @@
             $(document).ready(function() {
 
                 $("#btn_ttl").click(function() {
-                    var date_start=$("#date_start").val();
-                    $.getJSON('?c=mbops&a=sum_pay&date_start='+date_start, function(data) {
+                    var date_start = $("#date_start").val();
+                    $.getJSON('?c=mbops&a=sum_pay&date_start=' + date_start, function(data) {
                         $("#ttl_cnt_pay_cash").html(data['ttl_cnt_pay_cash']);
                         $("#ttl_sum_pay_cash").html(data['ttl_sum_pay_cash']);
                         $("#ttl_cnt_pay_jfb").html(data['ttl_cnt_pay_jfb']);
@@ -108,15 +111,7 @@
                         $("#ttl_sum_balance").html(data['ttl_sum_balance']);
                     })
                 });
-                
-                
-                $("#btn_syn_order").click(function() {
-                    var date_start=$("#date_start").val();
-                    $.getJSON('http://api.diandianzhe.com/corner/service/remote/rest/order_upload.htm', function(data) {
-                        //$("#ttl_cnt_pay_cash").html(data['ttl_cnt_pay_cash']);
-                        alert(data);
-                    })
-                });
+               
 
             });
         </script>
