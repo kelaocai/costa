@@ -27,7 +27,7 @@
                     <button type="submit" class="btn btn-success">查询</button>
                     </form>
                 </p>
-                <a href="http://api.diandianzhe.com/corner/service/remote/rest/order_upload.htm" class="btn btn-info" target="_blank" >同步实时订单</a>
+                <a href="" class="btn btn-info"  id="btn_syn_order">同步实时订单</a>
                 <p>
                     <li class="icon-ok"></li>
                     未结算现金
@@ -106,6 +106,15 @@
                         $("#ttl_sum_pay").html(data['ttl_sum_pay']);
                         $("#avg_pay").html(data['avg_pay']);
                         $("#ttl_sum_balance").html(data['ttl_sum_balance']);
+                    })
+                });
+                
+                
+                $("#btn_syn_order").click(function() {
+                    var date_start=$("#date_start").val();
+                    $.getJSON('http://api.diandianzhe.com/corner/service/remote/rest/order_upload.htm', function(data) {
+                        //$("#ttl_cnt_pay_cash").html(data['ttl_cnt_pay_cash']);
+                        alert(data);
                     })
                 });
 
