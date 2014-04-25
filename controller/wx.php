@@ -13,6 +13,8 @@ class wx extends spController {
         	//echo $echoStr;
         	//exit;
         	$this->responseMsg();
+        }else{
+        	echo "check error";
         }
 		
 	}
