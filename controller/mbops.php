@@ -5,7 +5,7 @@ class mbops extends spController {
 		
 		//同步实时订单数据
 		$url='http://api.diandianzhe.com/corner/service/remote/rest/order_upload.htm';
-		$html = file_get_contents($url);
+		//$html = file_get_contents($url);
 		
 
 		$db = spDB("DDZ_TAOKE_REPORT_SETTLE");
